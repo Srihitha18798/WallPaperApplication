@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">WallPaperApplication</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="appversion">app version "v1.0.1"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="backgrounds">Backgrounds</string>
+    <string name="fashion">Fashion</string>
+    <string name="nature">Nature</string>
+    <string name="science">Science</string>
+    <string name="feelings">Feelings</string>
+    <string name="health">Health</string>
+    <string name="education">Education</string>
+    <string name="people">People</string>
+    <string name="religion">Religion</string>
+    <string name="places">Places</string>
+    <string name="animals">Animals</string>
+    <string name="industry">Industry</string>
+    <string name="computer">Computer</string>
+    <string name="food">Food</string>
+    <string name="sports">Sports</string>
+    <string name="transportation">Transportation</string>
+    <string name="travel">Travel</string>
+    <string name="buildings">Buildings</string>
+    <string name="business">Business</string>
+    <string name="music">Music</string>
+
+</resources>
