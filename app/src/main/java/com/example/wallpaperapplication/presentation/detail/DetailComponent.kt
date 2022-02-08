@@ -9,5 +9,6 @@ interface DetailComponent {
     interface Factory {
         fun create(): DetailComponent
     }
+
     fun inject(detailActivity: DetailActivity)
 }

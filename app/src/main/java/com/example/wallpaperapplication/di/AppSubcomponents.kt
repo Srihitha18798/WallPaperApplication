@@ -6,7 +6,7 @@ import com.example.wallpaperapplication.presentation.main.MainComponent
 import dagger.Module
 
 @Module(
-    subcomponents = arrayOf(MainComponent::class,MainFragmentComponent::class,DetailComponent::class)
+        subcomponents = arrayOf(MainComponent::class, MainFragmentComponent::class, DetailComponent::class)
 )
 class AppSubcomponents {
 }

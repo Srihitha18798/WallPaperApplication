@@ -12,9 +12,9 @@ class MainFragmentViewModel @Inject constructor(private val repository: MainRepo
 
     var wallpaperImages = MutableLiveData<List<WallpaperImages>>()
 
-    fun getWallpaperImages(category:String,page:Int) {
+    fun getWallpaperImages(category: String, page: Int) {
         viewModelScope.launch {
-            repository.getWallpaperImages(category,page).observeForever {
+            repository.getWallpaperImages(category, page).observeForever {
                 wallpaperImages.postValue(it)
             }
         }

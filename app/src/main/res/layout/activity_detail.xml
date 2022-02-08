@@ -5,21 +5,20 @@
     android:background="@color/black">
 
     <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="80dp"
-        android:layout_marginBottom="60dp"
-        android:id="@+id/view_pager"/>
+        android:layout_marginBottom="60dp" />
 
     <Button
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back To Images"
-        android:id="@+id/back"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="5dp"
-        android:layout_alignParentBottom="true"/>
-
+        android:text="@string/back_to_images" />
 
 
 </RelativeLayout>

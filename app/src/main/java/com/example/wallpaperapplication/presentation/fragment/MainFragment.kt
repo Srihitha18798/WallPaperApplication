@@ -14,6 +14,7 @@ import com.example.wallpaperapplication.R
 import com.example.wallpaperapplication.data.model.WallpaperImages
 import com.example.wallpaperapplication.presentation.adapter.MainAdapter
 import com.example.wallpaperapplication.presentation.main.MainActivity
+import com.example.wallpaperapplication.presentation.utility.isNetworkAvailable
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import java.util.*
 import javax.inject.Inject
@@ -30,8 +31,8 @@ class MainFragment : Fragment() {
 
     private lateinit var gridLayoutManager: GridLayoutManager
     private var page = 1
-    private var limit=26
-    private lateinit var view1:View
+    private var limit = 26
+    private lateinit var view1: View
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -42,7 +43,7 @@ class MainFragment : Fragment() {
         return view1;
     }
 
-    private fun init(){
+    private fun init() {
         setupAdapter()
         setupClickListener()
         attachObserver()
@@ -50,19 +51,19 @@ class MainFragment : Fragment() {
 
     }
 
-    private fun setupAdapter(){
+    private fun setupAdapter() {
         adapter = MainAdapter(requireContext())
         view1.rv.adapter = adapter
-        gridLayoutManager=GridLayoutManager(context,2,GridLayoutManager.VERTICAL,false)
-        view1.rv.layoutManager=gridLayoutManager
+        gridLayoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
+        view1.rv.layoutManager = gridLayoutManager
     }
 
-    private fun getWallpaperImages(){
+    private fun getWallpaperImages() {
         showProgress()
-        viewModel.getWallpaperImages(MainActivity.category.toLowerCase(Locale.ROOT),page)
+        viewModel.getWallpaperImages(MainActivity.category.toLowerCase(Locale.ROOT), page)
     }
 
-    private fun attachObserver(){
+    private fun attachObserver() {
         viewModel.wallpaperImages.observeForever {
             hideProgress()
             if (it != null) {
@@ -78,6 +79,9 @@ class MainFragment : Fragment() {
         view1.rv.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 Log.e("MainActivity", "onScrollChange: ")
+                if (context?.isNetworkAvailable() == false) {
+                    Toast.makeText(context, "Internet is not connected", Toast.LENGTH_LONG).show()
+                }
                 val visibleItemCount = gridLayoutManager.childCount
                 val pastVisibleItem = gridLayoutManager.findFirstVisibleItemPosition()
                 val total = adapter?.itemCount

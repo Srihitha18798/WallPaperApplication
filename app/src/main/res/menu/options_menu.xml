@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-    android:id="@+id/Save"
-    android:title="Save as Image" />
+        android:id="@+id/Save"
+        android:title="@string/save_as_image" />
     <item
         android:id="@+id/wallpaper"
-        android:title="Set as Wallpaper" />
+        android:title="@string/set_as_wallpaper" />
 
 </menu>

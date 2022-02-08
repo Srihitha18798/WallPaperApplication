@@ -29,6 +29,7 @@ import com.example.wallpaperapplication.presentation.adapter.DetailAdapter
 import com.example.wallpaperapplication.presentation.adapter.MainAdapter
 import com.example.wallpaperapplication.presentation.main.MainActivity
 import com.example.wallpaperapplication.presentation.utility.OnSwipeTouchListener
+import com.example.wallpaperapplication.presentation.utility.isNetworkAvailable
 import com.example.wallpaperapplication.presentation.utility.loadImage
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -81,8 +82,8 @@ class DetailActivity : AppCompatActivity() {
                 mMessageReceiver,
                 IntentFilter("custom-message")
         )
-        back.setOnClickListener{
-            val intent=Intent(this,MainActivity::class.java)
+        back.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
@@ -110,12 +111,21 @@ class DetailActivity : AppCompatActivity() {
         if (item.itemId == R.id.Save) {
             Log.e("save", "Save Option")
             Log.e("url", urlPath)
-            saveImage()
+            if (applicationContext.isNetworkAvailable() == false) {
+                Toast.makeText(this, "Internet is not connected", Toast.LENGTH_LONG).show()
+            } else {
+                saveImage()
+            }
             return true
         } else if (item.itemId == R.id.wallpaper) {
             Log.e("wallpaper", "Wallpaper Option")
             Log.e("url", urlPath)
-            setAsWallpaper(urlPath)
+            if (applicationContext.isNetworkAvailable() == false) {
+                Toast.makeText(this, "Internet is not connected", Toast.LENGTH_LONG).show()
+            } else {
+                setAsWallpaper(urlPath)
+            }
+
             return true
         }
         return super.onOptionsItemSelected(item)

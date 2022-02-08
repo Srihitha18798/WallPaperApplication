@@ -29,22 +29,22 @@ class DetailAdapter(
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val inflater = LayoutInflater.from(context)
-        var v: View = inflater.inflate(R.layout.viewpager_layout, null)
-        var myImageView: ImageView = v.findViewById(R.id.image)
+        val v: View = inflater.inflate(R.layout.viewpager_layout, null)
+        val myImageView: ImageView = v.findViewById(R.id.image)
         myImageView.loadImage(imageList[position].largeImageURL)
         if (position == 0) {
             selectedImage(imageList[position].largeImageURL)
         } else {
             selectedImage(imageList[position - 1].largeImageURL)
         }
-        var vp = container as ViewPager
+        val vp = container as ViewPager
         vp.addView(v, 0)
         return v
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-        var viewPager = container as ViewPager
-        var v: View = `object` as View
+        val viewPager = container as ViewPager
+        val v: View = `object` as View
         viewPager.removeView(v)
     }
 

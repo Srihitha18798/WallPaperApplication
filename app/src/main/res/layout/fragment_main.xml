@@ -17,18 +17,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/list_item" />
+
         <ProgressBar
-            android:layout_gravity="center"
             android:id="@+id/progressBar"
             android:layout_width="36dp"
             android:layout_height="31dp"
+            android:layout_gravity="center"
             android:layout_marginStart="2dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="2dp"
             android:visibility="gone"
-            tools:visibility="visible"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            tools:visibility="visible" />
 
     </LinearLayout>
 

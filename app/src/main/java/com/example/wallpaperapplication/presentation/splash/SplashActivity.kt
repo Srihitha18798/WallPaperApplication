@@ -20,8 +20,8 @@ class SplashActivity : AppCompatActivity() {
 
     private fun init() {
         window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
         Handler().postDelayed({
             val intent = Intent(this, MainActivity::class.java)
