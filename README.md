@@ -11,6 +11,13 @@ An android wallpaper App which displayes free images of different categories fro
 * Download your favorite images.
 * Set your favorite image as wallpaper of your mobile phones
 
+## Getting started
+Clone the repository and import the project in Android Studio.
+You will also need to provide a key to access the Pixabay API, after getting the key, just put it in the `MainRepository.xml` file in the place of `key`
+
+## Dependencies
+The depdendencies for the project are described in the Gradle script `build.gradle` of the app, just sync the project in Android Studio and you are ready to go :)
+
 ## Screenshots
 
 <p float="middle">
