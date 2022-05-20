@@ -8,10 +8,8 @@ data class Wallpaper(
         val totalHits: Int,
         val hits: List<WallpaperImages>
 )
-
 @Entity
 data class WallpaperImages(
-
         @PrimaryKey
         val id: Int,
         val previewURL: String,

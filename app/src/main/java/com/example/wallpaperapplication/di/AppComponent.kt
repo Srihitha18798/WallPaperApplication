@@ -27,7 +27,6 @@ interface AppComponent {
     interface Factory {
         fun create(@BindsInstance context: Context): AppComponent
     }
-
     fun mainComponent(): MainComponent.Factory
     fun mainFragmentComponent(): MainFragmentComponent.Factory
     fun detailComponent(): DetailComponent.Factory

@@ -18,6 +18,4 @@ class RepositoryModule {
     ): MainRepository {
         return MainRepository(apiService, wallpaperDao, context)
     }
-
-
 }

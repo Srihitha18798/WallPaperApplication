@@ -54,7 +54,6 @@ class DetailActivity : AppCompatActivity() {
 
     private lateinit var viewPager: ViewPager
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         detailComponent = (application as MyApplication).appComponent.detailComponent().create()
         detailComponent.inject(this)

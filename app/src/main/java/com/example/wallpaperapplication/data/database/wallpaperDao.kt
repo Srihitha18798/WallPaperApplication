@@ -9,7 +9,6 @@ import com.example.wallpaperapplication.data.model.WallpaperImages
 
 @Dao
 interface wallpaperDao {
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertWallpapers(users: List<WallpaperImages>)
 

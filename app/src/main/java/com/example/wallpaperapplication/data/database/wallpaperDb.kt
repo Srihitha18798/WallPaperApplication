@@ -8,5 +8,4 @@ import com.example.wallpaperapplication.data.model.WallpaperImages
 abstract class wallpaperDb : RoomDatabase() {
 
     abstract fun getWallpaperDao(): wallpaperDao
-
 }
